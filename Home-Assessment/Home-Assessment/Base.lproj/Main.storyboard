@@ -64,9 +64,15 @@
                     <navigationItem key="navigationItem" title="Test App" id="7DE-vs-qG1">
                         <barButtonItem key="leftBarButtonItem" title="Add" id="zzQ-C0-62g">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="navigationBarActionsWithSender:" destination="BYZ-38-t0r" id="K3Z-ec-Y51"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Delete" id="aSc-TU-Qcd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="navigationBarActionsWithSender:" destination="BYZ-38-t0r" id="zay-rn-a0S"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
