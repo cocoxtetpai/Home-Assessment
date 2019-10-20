@@ -78,8 +78,9 @@ extension HTMLViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HTMLViewCell.className, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HTMLViewCell.className, for: indexPath) as! HTMLViewCell
         cell.backgroundColor = items[indexPath.item].backgroundColor
+        cell.loadUI()
         return cell
     }
     

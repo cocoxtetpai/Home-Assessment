@@ -50,6 +50,9 @@
                 <constraint firstAttribute="bottom" secondItem="RTV-j7-oXR" secondAttribute="bottom" id="RkW-tw-OgO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="webContentView" destination="RTV-j7-oXR" id="4EB-9L-2Hb"/>
+            </connections>
             <point key="canvasLocation" x="139" y="112"/>
         </collectionViewCell>
     </objects>
