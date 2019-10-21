@@ -14,12 +14,19 @@ struct HTMLItem {
     var titleColor: UIColor?
     var backgroundColor: UIColor?
     
-    static func getDummy() -> [HTMLItem] {
+    static func getDummys() -> [HTMLItem] {
         
         let item1 = HTMLItem(title: "title", titleColor: .brown, backgroundColor: .cyan)
         let item2 = HTMLItem(title: "title", titleColor: .brown, backgroundColor: .blue)
         let item3 = HTMLItem(title: "title", titleColor: .brown, backgroundColor: .magenta)
 
         return [item1, item2, item3]
+    }
+    
+    static func getDummy() -> HTMLItem {
+        
+        let item1 = HTMLItem(title: "title", titleColor: .brown, backgroundColor: .cyan)
+        
+        return item1
     }
 }

@@ -29,7 +29,7 @@ class HTMLViewController: UIViewController {
     
     private func setup() {
         
-        items = HTMLItem.getDummy()
+        items = HTMLItem.getDummys()
         
         collectionView.isPagingEnabled = true
         collectionView.isDirectionalLockEnabled = true
@@ -43,6 +43,33 @@ class HTMLViewController: UIViewController {
         
         btnleft.isEnabled = false
         self.view.backgroundColor = .blue
+    }
+    
+    @IBAction func navigationBarActions(sender: UIBarButtonItem) {
+        
+        switch sender {
+        case btnAdd:
+            let indexPath = IndexPath(item: selectedIndex.item, section: 0)
+            items.insert(HTMLItem.getDummy(), at: indexPath.item)
+            collectionView.insertItems(at: [indexPath])
+//            collectionView.scrollToItem(at: indexPath, at: .right, animated: true)
+            break
+            
+        case btnDelete:
+            
+            guard !items.isEmpty else {
+                return
+            }
+            
+            let indexPath = IndexPath(item: selectedIndex.item, section: 0)
+            items.remove(at: indexPath.item)
+            collectionView.deleteItems(at: [indexPath])
+//            collectionView.scrollToItem(at: previousIndexPath, at: .right, animated: true)
+            break
+            
+        default:
+            break
+        }
     }
     
     @IBAction func toolBarActions(sender: UIBarButtonItem) {
@@ -78,8 +105,9 @@ extension HTMLViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HTMLViewCell.className, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HTMLViewCell.className, for: indexPath) as! HTMLViewCell
         cell.backgroundColor = items[indexPath.item].backgroundColor
+        cell.loadUI()
         return cell
     }
     
